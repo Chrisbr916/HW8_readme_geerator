@@ -5,14 +5,37 @@ const generateREADME = (answers) => {
     return `${answers.title}
     ## Table of Contents:
     - [Description](#description)
+    - [Instalation](#istalation)
+    - [Usage](#usage)
+    - [License](#license)
+    - [Contributing](#contributing)
+    - [Tests](#tests)
+    - [Questions](#questions)
    
     
     
     
-    ## discription
-    
-    https://github.com/${answers.github}
+    ## description
+    ${answers.description}
 
+    ## istalation
+    ${answers.instalation}
+
+    ## usage
+    ${answers.usage}
+
+    ## license
+    ${answers.license}
+
+    ## contributing
+    ${answers.contributing}
+
+    ## tests
+    ${answers.test}
+
+    ## questions
+    You can find me on github at https://github.com/${answers.github}
+    If you have any questions about th code or would like to get into contact with me please email me at ${answers.email}
 
 
     `;
@@ -34,16 +57,52 @@ inquirer
         },
         {
             type: 'input',
-            name: 'descrition',
+            name: 'description',
             message: 'Please eneter a description of the project.',
             validate: (value) =>{if(value){return true} else{return 'please enter a value to continue'}}   
         },
         {
             type: "list",
-            name: "faveColor",
-            message: "Pick your fave color!",
-            choices: ["red", "green", "blue"]
-          }
+            name: "license",
+            message: "Pick your license",
+            choices: ["none", "not sure what this is", "idk"]
+          },
+          {
+            type: 'input',
+            name: 'instalation',
+            message: 'Please eneter how it was installed',
+            validate: (value) =>{if(value){return true} else{return 'please enter a value to continue'}}   
+        },
+        {
+            type: 'input',
+            name: 'usage',
+            message: 'Please eneter how your project is used.',
+            validate: (value) =>{if(value){return true} else{return 'please enter a value to continue'}}   
+        },
+        {
+            type: 'input',
+            name: 'contributing',
+            message: 'Please eneter all people who contributed to this project.',
+            validate: (value) =>{if(value){return true} else{return 'please enter a value to continue'}}   
+        },
+        {
+            type: 'input',
+            name: 'test',
+            message: 'Please eneter the tests that were run.',
+            validate: (value) =>{if(value){return true} else{return 'please enter a value to continue'}}   
+        },
+        {
+            type: 'input',
+            name: 'github',
+            message: 'Please eneter your github user name.',
+            validate: (value) =>{if(value){return true} else{return 'please enter a value to continue'}}   
+        },
+        {
+            type: 'input',
+            name: 'email',
+            message: 'Please eneter your email.',
+            validate: (value) =>{if(value){return true} else{return 'please enter a value to continue'}}   
+        },
     ])
 
     //this puts the answers into 
